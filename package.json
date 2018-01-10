@@ -1,0 +1,20 @@
+{
+  "name": "flowgo",
+  "version": "1.0.0",
+  "description": "Navigate the routes of your react app using a state machine configuration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antialias/flowgo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antialias/flowgo/issues"
+  },
+  "homepage": "https://github.com/antialias/flowgo#readme"
+}
