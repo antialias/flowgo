@@ -2,9 +2,10 @@
   "name": "flowgo",
   "version": "1.0.0",
   "description": "Navigate the routes of your react app using a state machine configuration.",
-  "main": "index.js",
+  "main": "dist/build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require babel-register --require source-map-support",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,27 @@
   "bugs": {
     "url": "https://github.com/antialias/flowgo/issues"
   },
-  "homepage": "https://github.com/antialias/flowgo#readme"
+  "homepage": "https://github.com/antialias/flowgo#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "history": "^4.7.2",
+    "local-module-regex": "^1.0.4",
+    "mocha": "^4.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "redux": "^3.7.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "lodash.assign": "^4.2.0",
+    "lodash.mapvalues": "^4.6.0"
+  },
+  "peerDependencies": {
+    "react": "^16"
+  }
 }
