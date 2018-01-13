@@ -12,7 +12,7 @@ module.exports = {
       { test: /\.js$/, exclude: localModuleRegexBuilder(__dirname), loader: "babel-loader" }
     ]
   },
-  externals:[
-    'react'
-  ]
+  externals:{
+    react: "require('react')"
+  }
 }
