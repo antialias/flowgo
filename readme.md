@@ -79,12 +79,12 @@ class ButtonBar extends React.Component {
     percentDone
   } = this.props.flow.estimateProgress({start: first, end: fifth})
   render() {
-    <div>{
+    <div>
       <div className='percentComplete'>{`{Math.floor(100 * percentDone)}% complete`}</div>
       <div className='buttonBar'>
         {this.props.flow.transitions.map((destination, key) => <Link key={key} to={destination}>{key}</Link>)
       </div>
-    }</div>
+    </div>
   }
 }
 ```
