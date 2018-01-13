@@ -5,7 +5,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'build.js',
-    library: 'commonjs2',
+    library: 'flowgo',
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
@@ -13,6 +14,6 @@ module.exports = {
     ]
   },
   externals:{
-    react: "require('react')"
+    react: true
   }
 }
