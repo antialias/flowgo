@@ -1,6 +1,6 @@
 {
   "name": "flowgo",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Navigate the routes of your react app using a state machine configuration.",
   "main": "dist/build.js",
   "scripts": {
