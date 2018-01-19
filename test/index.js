@@ -7,7 +7,7 @@ import {
   observeHistoryPathname,
   observeReduxStore,
   FlowWrapper,
-  flowConnector
+  flow
 } from '..'
 import {equal} from 'assert'
 import { createElement as $ } from 'react'
@@ -48,7 +48,7 @@ describe(`flowgo`, function () {
   describe('flow-wrapper', function () {
     beforeEach(function () {
       wrapper = render(
-        $(flowConnector(WrappedComponent), {}, `child content here`),
+        $(flow(WrappedComponent), {}, `child content here`),
         {context: {flow: {
           machine,
           dataObservable: data,
@@ -72,7 +72,7 @@ describe(`flowgo`, function () {
   })
   describe(`flow connector`, function () {
     it(`should expose transitions for current state to wrapped component as props.flow.transitions`, function () {
-      const MyComponent = flowConnector(Object.assign(({flow: {
+      const MyComponent = flow(Object.assign(({flow: {
         transitions
       }}) => $('span', {}, Object.keys(transitions).join(':')), {contextTypes: {flow: object}}))
       state.value('stateb')
@@ -84,7 +84,7 @@ describe(`flowgo`, function () {
       equal(wrapper.text(), `next:back`)
     })
     it(`should evaluate computed transitions with arguments from dataObservable`, function () {
-      const MyComponent = flowConnector(Object.assign(({flow: {transitions: {computed}}}) => $('div', {}, computed), {contextTypes: {flow: object}}))
+      const MyComponent = flow(Object.assign(({flow: {transitions: {computed}}}) => $('div', {}, computed), {contextTypes: {flow: object}}))
       const wrapper = render($(MyComponent), {context: {flow: {
         machine,
         dataObservable: data,
@@ -94,7 +94,7 @@ describe(`flowgo`, function () {
     })
     it.skip(`should reevaluate computed transitions when dataobservables values change`, function () {
       const MyComponent = ({flow: {transitions: {computed}}}) => computed
-      const WrappedComponent = flowConnector(MyComponent)
+      const WrappedComponent = flow(MyComponent)
       const wrapper = shallow($(WrappedComponent), {context: {flow: {
         machine,
         dataObservable: data,
